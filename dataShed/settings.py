@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,10 +76,13 @@ WSGI_APPLICATION = 'dataShed.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3', # Change when wanting to migrate to more complex db
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+"""
+Additional settings like USER, PASSWORD, HOST must be added for other dbs.
+"""
 
 
 # Password validation
@@ -108,7 +112,7 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
+ 
 USE_L10N = True
 
 USE_TZ = True
